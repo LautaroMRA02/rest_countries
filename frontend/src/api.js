@@ -1,10 +1,7 @@
-
-const cargarPeliculas = async() => {
+export const loadCountries = async() => {
     try{
-
         const respuesta =  await fetch(`https://restcountries.com/v3.1/all`)
         console.log(respuesta);
-
         //si es correcta 
         if (respuesta.status === 200){
             const datos = await respuesta.json();
@@ -46,8 +43,4 @@ const cargarPeliculas = async() => {
     }
     
 };
-cargarPeliculas();
 
-
-const testFile = createFile(["hello-world"], "my-test.txt");
-console.log(testFile instanceof Blob);

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS STYLES -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="grid_container">
+        <header id="header">
+            <b>Where in the world?</b>
+            <div>
+                <b>Dark mode</b>
+            </div>
+            <form name="formulario" method="post" action="http://pagina.com/send.php">
+
+                <input type="text" list="items" />
+                <!-- Lista de opciones -->
+                <datalist id="items">
+                    <option value="1">Opción 1</option>
+                    <option value="2">Opción 2</option>
+                    <option value="3">Opción 3</option>
+                </datalist>
+
+                <select name="combo">
+                    <option value="" disabled selected>filter by Region</option>
+                    <option value="1">Opción 1</option>
+                </select>
+            </form>
+        </header>
+        <main id="contenedor">
+        </main>
+    </div>
+    <script src="./src/index.js"></script>
+</body>
+
+</html>
