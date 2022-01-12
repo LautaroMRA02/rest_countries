@@ -2,14 +2,32 @@
 
 
 
-body{
-    background-color: aqua;
+
+
+body {
+    --color-bg: hsl(0, 0%, 98%);
+    --color-elements: hsl(209, 23%, 22%);
+    --color-text: hsl(200, 15%, 8%);
 }
+
+body.dark-theme {
+    --color-bg: hsl(207, 26%, 17%);
+    --color-elements: hsl(209, 23%, 22%);
+    --color-text: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
 .grid_container
 {
     display: grid;
     grid-template-areas:"header"
                         "main";
+    height: 100vh;
+    grid-template-rows: 5rem 1fr;
 }
 
 #header_container
@@ -23,3 +41,11 @@ body{
 {
     grid-area: main;
 }
+.filter_countries
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
