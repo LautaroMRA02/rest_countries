@@ -1,32 +1,11 @@
-const loadCountries = async() => {
+export const loadCountries = async(ruta) => {
     try{
-        const respuesta =  await fetch(`https://restcountries.com/v2/all?fields=name,capital,region,population`)
-        console.log(respuesta);
+        const respuesta =  await fetch(`https://restcountries.com/v3.1/${ruta}?limit=20`)
         //si es correcta 
         if (respuesta.status === 200){
             const datos = await respuesta.json();
             console.log(datos.sort());
-
-            // let card_countries = '';
-
-            // datos.forEach(element => {
-            //     console.log(element)
-            //     card_countries += `
-            //     <section>
-            //     <aside>
-            //         <img src="" alt="">
-            //     </aside>
-            //     <div>
-            //         <a href="http:/index/${element.translations.spa.common}"> <h4>${element.translations.spa.common}</h4></a>
-            //         <p>${element.population}</p>
-            //         <p>${element.region}</p>
-            //         <p>${element.capital}</p>
-            //         <p></p>
-            //     </div>
-            //     </section>
-            //     ` ;
-            //     document.getElementById('contenedor').innerHTML=card_countries;
-            // });
+            return datos
         } 
         else if (respuesta.status === 401) {
             console.log('pusite algo mal')
@@ -43,5 +22,3 @@ const loadCountries = async() => {
     }
     
 };
-
-loadCountries()

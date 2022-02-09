@@ -1,11 +1,21 @@
 import Header from './components/Header.js';
-
 import { parseRequestUrl } from "./utils.js";
+
 import './style.css';
+
+import '../node_modules/@fortawesome/fontawesome-free/js/brands.js'
+import '../node_modules/@fortawesome/fontawesome-free/js/solid.js'
+import '../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js'
+
+
 import  CountriesScreen  from './screens/CountriesScreen.js';
+import  DetailsScreen  from './screens/DetailsScreen.js';
+
+
 
 const routes = {
     '/':CountriesScreen,
+    '/countrie/:id': DetailsScreen,
 };
 const router = async() => {
     const request = parseRequestUrl();
@@ -23,8 +33,5 @@ const router = async() => {
     if (screen.after_render) await screen.after_render();
 }
 
-// console.log(request)
-// console.log(window.location.pathname)
 window.addEventListener("load",router)
-
 window.addEventListener('hashchange',router)
